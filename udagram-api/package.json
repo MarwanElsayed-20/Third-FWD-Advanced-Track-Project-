@@ -8,8 +8,8 @@
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
-    "clean": "rimraf www/ || true",
-    "build": "npm run clean && tsc && copy \"src/config\" \"www/config\" && copy \".npmrc\" \"www/.npmrc\" && copy \"package.json\" \"www/package.json\" && cd www && zip -r Archive.zip . && cd ..",
+    "clean": "rm -rf www/ || true",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "eb use udagram-app-api-dev && eb deploy && eb setenv DB_HOST=$POSTGRES_HOST DB_NAME=$POSTGRES_DB DB_USER=$POSTGRES_USERNAME DB_PASSWORD=$POSTGRES_PASSWORD AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE AWS_BUCKET=$AWS_BUCKET URL=$URL AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
   },
