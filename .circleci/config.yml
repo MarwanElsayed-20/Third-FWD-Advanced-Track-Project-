@@ -14,21 +14,21 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run:
-          name: Front-End Install
+          name: Front-End build
           command: |
-            npm run frontend:install
+            npm run start
       - run:
           name: Back-End Install
           command: |
-            npm run backend:install
+            npm run dev
       - run:
           name: Front-End Build
           command: |
-            npm run frontend:build
+            npm run build
       - run:
           name: Back-End Build
           command: |
-            npm run backend:build
+            npm run build
       - run:
           name: Back-End Deploy
           command: npm run backend:deploy
