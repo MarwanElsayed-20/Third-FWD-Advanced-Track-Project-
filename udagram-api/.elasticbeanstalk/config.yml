@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: udagram-app-api-dev
     group_suffix: null
+  main:
+    environment: udagram-app-api-dev
 deploy:
   artifact: www/Archive.zip
   main:
