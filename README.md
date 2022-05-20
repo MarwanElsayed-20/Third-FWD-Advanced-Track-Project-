@@ -1,6 +1,7 @@
 # Udagram
 
 its a mockup app to try to use AWS for hosting it.
+http://udagram-bucket-1.s3-website-us-east-1.amazonaws.com
 
 ### Dependencies
 
